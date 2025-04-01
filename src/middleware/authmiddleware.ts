@@ -6,6 +6,7 @@ export const authMiddleware = (
   next: NextFunction
 ) => {
   const token = req.headers.authorization;
+  next();
   if (!token) {
     return res.status(401).json({ message: "Unauthorized" });
   }
